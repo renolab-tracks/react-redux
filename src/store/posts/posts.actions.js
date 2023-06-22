@@ -92,7 +92,7 @@ export const deletePostFailure = (errorMessage) => ({
   payload: errorMessage,
 });
 
-export const fetchPosts = async (dispatch) => {
+export const fetchPosts = () => async (dispatch) => {
   dispatch(fetchPostsStart());
 
   try {
