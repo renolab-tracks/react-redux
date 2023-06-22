@@ -11,8 +11,10 @@ export default function Posts() {
   const relatedPosts = useSelector(({ posts }) => posts.related);
   const isFetching = useSelector(({ posts }) => posts.isFetching);
   const errorMessage = useSelector(({ posts }) => posts.errorMessage);
-  const { id: postId } = useParams();
+  const params = useParams();
+  const postId = params.id;
 
+  console.log(params);
   useEffect(() => {
     dispatch(fetchPost(postId));
   }, [postId]);
